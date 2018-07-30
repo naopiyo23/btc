@@ -20,7 +20,7 @@ def simulating(events, manager):
         # トレード実行
         manager.perform_trade(event)
 
-        # 最後は決済して終了
+        # 決済
         # check_and_close_last_order(event)
 
         p.update(i + 1)
@@ -72,7 +72,7 @@ def plot_data(timeseries):
 if __name__ == "__main__":
     events = queue.Queue()  # 同期キュー
 
-    status = dict()  # tick をまたいで記憶しておきたい情報
+    status = dict()  # tick をまたいで記憶
     status["is_sim"] = True
 
 #    portfolio = PortfolioLocal(status)

@@ -18,7 +18,6 @@ class TimeSeries():
         # self.prices.reset_index().set_index('timestamps')
         self.prices.loc[event.time, event.instrument] = event.bid
 
-        # なんかこの行は無駄な処理な気がする...
         dateTimeIndex = pd.DatetimeIndex(self.prices.index)
         self.prices.index = dateTimeIndex
 
